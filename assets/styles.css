@@ -110,4 +110,14 @@ a:hover{text-decoration:underline}
 .nav a.active {
   font-weight: 600;
   color: #42ff9e;
+  text-decoration: none;
+}
+.nav a.active::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px; height: 6px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: #42ff9e;
 }
