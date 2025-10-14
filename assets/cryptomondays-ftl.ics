@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CryptoMondays FTL//EN
+BEGIN:VEVENT
+UID:cm-ftl-2025-10-14@cryptomondaysfl.com
+DTSTAMP:20251014T161930Z
+DTSTART:20251103T233000Z
+DTEND:20251104T013000Z
+SUMMARY:CryptoMondays Fort Lauderdale — Community Meetup
+LOCATION:LauderAle Brewery, Fort Lauderdale
+DESCRIPTION:Networking + lightning talks. More: https://www.meetup.com/cryptomondays-fort-lauderdale/
+END:VEVENT
+END:VCALENDAR
