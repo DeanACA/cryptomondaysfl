@@ -3,12 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Events • CryptoMondays Fort Lauderdale</title>
-  <meta name="description" content="All CryptoMondays Fort Lauderdale events — upcoming and past meetups at LauderAle.">
+  <title>CryptoMondays Fort Lauderdale — Events & Meetups</title>
+  <meta name="description" content="Join CryptoMondays Fort Lauderdale for monthly Web3 meetups — where builders, investors, creators, and the crypto-curious connect. Explore upcoming and past events from our local blockchain community." />
   <link rel="canonical" href="https://cryptomondaysfl.com/events.html" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="CryptoMondays Fort Lauderdale — Events" />
+  <meta property="og:description" content="Monthly Web3 meetups for builders, investors, creators, and the crypto-curious. Explore upcoming and past events from the Fort Lauderdale chapter." />
+  <meta property="og:url" content="https://cryptomondaysfl.com/events.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cryptomondaysfl.com/assets/og-cover.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CryptoMondays Fort Lauderdale — Events" />
+  <meta name="twitter:description" content="Monthly Web3 meetups for builders, investors, creators, and the crypto-curious. Explore upcoming and past events from the Fort Lauderdale chapter." />
+  <meta name="twitter:image" content="https://cryptomondaysfl.com/assets/og-cover.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Styles & Scripts -->
   <link rel="stylesheet" href="assets/styles.css" />
   <script defer src="assets/script.js"></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CryptoMondays Fort Lauderdale",
+    "url": "https://cryptomondaysfl.com/",
+    "logo": "https://cryptomondaysfl.com/assets/logo.svg",
+    "sameAs": [
+      "https://x.com/CryptoMondaysFL",
+      "https://www.meetup.com/cryptomondays-fort-lauderdale/"
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -28,9 +60,14 @@
 
   <main>
     <section class="section">
-      <div class="container">
-        <h1>All Events</h1>
-        <p class="muted">Upcoming and past meetups, pulled from <code>assets/events.json</code>.</p>
+  <div class="container">
+    <h1>CryptoMondays Fort Lauderdale - Events & Meetups</h1>
+    <p><strong>CryptoMondays Fort Lauderdale</strong> hosts monthly meetups bringing together Web3 builders, investors, creators, and the crypto-curious for conversations that spark ideas and connections.</p>
+    <p>Each event is different — from casual community nights and lightning talks to hands-on demos and panels with innovators shaping the future of blockchain and digital assets.</p>
+    <p>Check out our upcoming gatherings below, or explore highlights from past events to see what the community is building next.</p>
+  </div>
+</section>
+</p>
 
         <h2 style="margin-top:28px;">Upcoming</h2>
         <div id="events-upcoming" class="cards" data-src="assets/events.json"></div>
