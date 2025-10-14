@@ -105,3 +105,9 @@ a:hover{text-decoration:underline}
   border-radius: 12px;
   margin-bottom: 10px;
 }
+
+/* Highlight current nav link */
+.nav a.active {
+  font-weight: 600;
+  color: #42ff9e;
+}
