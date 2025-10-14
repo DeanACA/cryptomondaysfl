@@ -63,3 +63,21 @@ a:hover{text-decoration:underline}
 .contact-list li{margin:6px 0}
 .more{margin-top:12px}
 .site-footer small{color:var(--muted)}
+
+/* Carousel */
+.carousel { position: relative; margin-top: 8px; }
+.slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+.slide { scroll-snap-align: start; }
+.slider::-webkit-scrollbar { height: 8px; }
+.slider::-webkit-scrollbar-thumb { background:#202632; border-radius: 8px; }
+.slider-controls {
+  position: absolute; top: -42px; right: 0; display: flex; gap: 8px;
+}
