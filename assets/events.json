@@ -1,10 +1,29 @@
 [
   {
-    "title": "CryptoMondays Fort Lauderdale \u2014 Community Meetup",
+    "title": "CryptoMondays Fort Lauderdale - Official Blockchain Futurist Conference Kickoff",
     "start": "2025-11-03T18:30:00",
     "venue": "LauderAle Brewery",
-    "description": "Networking + lightning talks. New to crypto? You\u2019re welcome!",
-    "meetup": "https://www.meetup.com/cryptomondays-fort-lauderdale/",
+    "description": "CryptoMondays Fort Lauderdale is proud to host the official opening event for the Blockchain Futurist Conference Florida — the first time this iconic global conference is coming to the USA and to Florida!",
+    "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/events/311207749",
     "ics": "/assets/cryptomondays-ftl.ics"
+  },
+  {
+    "title": "CryptoMondays FTL — Lightning Demos",
+    "start": "TBAT18:30:00",
+    "venue": "TBA",
+    "description": "Five 5-minute demos + community updates.",
+    "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/"
+  },
+  {
+    "title": "CryptoMondays Fort Lauderdale + Boston - Official Boston Blockchain Week Kickoff",
+    "start": "2025-09-08T18:30:00",
+    "venue": "Groma Headquarters",
+    "description": "Our kickoff night! Intros, networking, and first speakers."
+    "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/events/310486415"
   }
+]
+
+
+
+  
 ]
