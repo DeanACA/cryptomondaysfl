@@ -5,7 +5,8 @@
     "venue": "LauderAle Brewery",
     "description": "CryptoMondays Fort Lauderdale is proud to host the official opening event for the Blockchain Futurist Conference Florida — the first time this iconic global conference is coming to the USA and to Florida!",
     "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/events/311207749",
-    "ics": "/assets/cryptomondays-ftl.ics"
+    "ics": "assets/cryptomondays-ftl.ics"
+    "image": "assets/events/CryptoMondays Fort Lauderdale_Futurist_Invite_02.png"
   },
   {
     "title": "CryptoMondays FTL — Lightning Demos",
