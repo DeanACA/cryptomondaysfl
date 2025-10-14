@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events • CryptoMondays Fort Lauderdale</title>
+  <meta name="description" content="All CryptoMondays Fort Lauderdale events — upcoming and past meetups at LauderAle.">
+  <link rel="canonical" href="https://cryptomondaysfl.com/events.html" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="./">
+        <img src="assets/logo.svg" alt="CryptoMondays Fort Lauderdale" class="logo" />
+        <span>CryptoMondays <b>Fort Lauderdale</b></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="events.html">Events</a>
+        <a href="index.html#sponsor">Sponsor</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>All Events</h1>
+        <p class="muted">Upcoming and past meetups, pulled from <code>assets/events.json</code>.</p>
+
+        <h2 style="margin-top:28px;">Upcoming</h2>
+        <div id="events-upcoming" class="cards" data-src="assets/events.json"></div>
+
+        <h2 style="margin-top:32px;">Past</h2>
+        <div id="events-past" class="cards" data-src="assets/events.json"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row between center">
+      <small>© 2025 CryptoMondays Fort Lauderdale</small>
+      <small><a href="sitemap.xml">Sitemap</a> · <a href="robots.txt">Robots</a></small>
+    </div>
+  </footer>
+</body>
+</html>
