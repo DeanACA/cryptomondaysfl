@@ -18,8 +18,10 @@ function fmtDate(iso) {
 }
 
 function eventCard(ev) {
+  const imgPart = ev.image ? `<div class="card-image"><img src="${ev.image}" alt="${ev.title}" loading="lazy"></div>` : "";
   return `
     <article class="card">
+      ${imgPart}
       <h3>${ev.title}</h3>
       <div class="meta">${fmtDate(ev.start)} · ${ev.venue || "Fort Lauderdale"}</div>
       <p>${ev.description || ""}</p>
@@ -32,9 +34,11 @@ function eventCard(ev) {
 }
 
 function eventSlide(ev) {
+  const imgPart = ev.image ? `<img src="${ev.image}" alt="${ev.title}" loading="lazy">` : "";
   return `
     <div class="slide">
       <div class="card">
+        ${imgPart}
         <h3>${ev.title}</h3>
         <div class="meta">${fmtDate(ev.start)} · ${ev.venue || "Fort Lauderdale"}</div>
         <p>${ev.description || ""}</p>
