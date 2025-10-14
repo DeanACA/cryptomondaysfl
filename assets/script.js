@@ -116,3 +116,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 });
+
+// --- Highlight current nav link automatically ---
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav a");
+  const current = window.location.pathname.split("/").pop(); // get filename (e.g. events.html or index.html)
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (
+      (current === "" && href.includes("index")) || // homepage root
+      current === href ||
+      (current === "" && href === "./") // when hosted at root without filename
+    ) {
+      link.classList.add("active");
+    }
+  });
+});
