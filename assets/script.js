@@ -133,3 +133,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// --- Smooth scroll for in-page links (homepage) ---
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href").slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", `#${id}`);
+      }
+    });
+  });
+});
+
+// --- Active link on scroll (homepage sections) ---
+document.addEventListener("DOMContentLoaded", () => {
+  // Only run on homepage (where links are hashes)
+  const isHome = location.pathname.endsWith("/") || location.pathname.endsWith("index.html") || location.pathname === "";
+  if (!isHome) return;
+
+  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+  const byId = new Map(navLinks.map(link => [link.getAttribute("href").slice(1), link]));
+
+  const sections = Array.from(document.querySelectorAll("section[id]")).filter(s => byId.has(s.id));
+  if (!sections.length) return;
+
+  function setActive(id) {
+    navLinks.forEach(l => l.classList.remove("active"));
+    const link = byId.get(id);
+    if (link) link.classList.add("active");
+  }
+
+  // If page loads with a hash, set it immediately
+  if (location.hash && byId.has(location.hash.slice(1))) {
+    setActive(location.hash.slice(1));
+  }
+
+  // Observe sections crossing ~40% viewport height
+  const observer = new IntersectionObserver((entries) => {
+    // pick the most visible section
+    let top = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (top) setActive(top.target.id);
+  }, { root: null, threshold: [0.25, 0.4, 0.6], rootMargin: "-40% 0px -40% 0px" });
+
+  sections.forEach(sec => observer.observe(sec));
+});
