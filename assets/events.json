@@ -13,14 +13,14 @@
     "venue": "LauderAle Brewery",
     "description": "Five 5-minute demos + community updates.",
     "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/",
-    "image": "assets/events/demos-dec2025.jpg"
+    "image": "assets/events/demos-dec2025.png"
   },
   {
     "title": "CryptoMondays Fort Lauderdale + Boston - Official Boston Blockchain Week Kickoff",
     "start": "2025-09-08T18:30:00",
     "venue": "Groma Headquarters",
     "description": "Our kickoff night! Intros, networking, and speakers.",
-    "image": "assets/events/kickoff-sept2025.jpg"
+    "image": "assets/events/kickoff-sept2025.png"
   }
 ]
 
