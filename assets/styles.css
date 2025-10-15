@@ -121,3 +121,29 @@ a:hover{text-decoration:underline}
   border-radius: 50%;
   background: #42ff9e;
 }
+
+/* Logo grids for sponsors & partners */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 24px;
+}
+
+.logo-grid img {
+  max-width: 160px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+}
+
+.logo-grid a:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
