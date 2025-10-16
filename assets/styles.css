@@ -159,46 +159,22 @@ a:hover{text-decoration:underline}
   opacity: 1;
 }
 
-/* Hero section with logo */
-.hero-flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  text-align: left;
-}
-
+/* Hero logo (size + animation) */
 .hero-logo img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
-}
-
-.hero-text {
-  max-width: 600px;
-}
-
-@media (max-width: 768px) {
-  .hero-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-logo img {
-    max-width: 140px;
-  }
-}
-
-/* --- Hero Logo Animation --- */
-.hero-logo img {
-  max-width: 160px;
+  max-width: 300px;          /* desktop size */
   width: 100%;
   height: auto;
   opacity: 0;
   transform: translateY(20px);
   animation: logoFadeIn 1.2s ease-out forwards;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 768px) {
+  .hero-logo img {
+    max-width: 160px;        /* mobile size */
+    animation: logoFadeIn 1s ease-out forwards;
+  }
 }
 
 /* Optional: shorter delay on smaller screens */
