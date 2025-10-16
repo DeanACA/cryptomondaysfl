@@ -29,6 +29,12 @@ a:hover{text-decoration:underline}
   vertical-align: middle;
 }
 
+@media (max-width: 768px) {
+  .brand .logo {
+    height: 70px;
+  }
+}
+
 .nav a{margin-left:16px;color:var(--ink);opacity:0.9}
 .nav a:hover{opacity:1}
 
