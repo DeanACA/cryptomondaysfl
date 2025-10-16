@@ -1,26 +1,26 @@
 [
   {
-    "title": "CryptoMondays FTL — Community Night",
-    "start": "2025-12-01T18:30:00",
+    "title": "Fort Lauderdale + Boston - Official Boston Blockchain Week Kickoff",
+    "start": "2025-9-08T18:30:00",
     "venue": "Fort Lauderdale",
     "description": "Networking + lightning talks.",
-    "meetup": "https://www.meetup.com/cryptomondays-fort-lauderdale/",
-    "image": "assets/events/sample-1.jpg"
+    "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/events/310486415/",
+    "image": "assets/events/kickoff-sept2025.png"
   },
   {
-    "title": "CryptoMondays FTL — Lightning Demos",
-    "start": "2025-12-15T18:30:00",
+    "title": "Official Blockchain Futurist Conference Kickoff",
+    "start": "2025-11-3T18:30:00",
     "venue": "Fort Lauderdale",
-    "description": "Hands-on demos from local builders.",
-    "meetup": "https://www.meetup.com/cryptomondays-fort-lauderdale/",
-    "image": "assets/events/sample-2.jpg"
+    "description": "Networking + lightning talks.",
+    "meetup": "https://www.meetup.com/cryptomondays-ft-lauderdale/events/311207749/",
+    "image": "assets/events/meetup-nov2025.png"
   },
   {
-    "title": "CryptoMondays FTL — Builder Showcase",
+    "title": "Coming Soon",
     "start": "2025-11-10T18:30:00",
     "venue": "Fort Lauderdale",
     "description": "Show your project; get feedback.",
-    "image": "assets/events/sample-3.jpg"
+    "image": "assets/events/soon.png"
   }
 ]
 
