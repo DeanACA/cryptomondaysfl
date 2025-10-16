@@ -1,8 +1,18 @@
 {
-  "playlist": "list=PLyJZvEL_pjAuZjMUdsxEiAKS7iY86KM9D&si=KPlCG2utvQsJV3yg",
+  "playlist": "PLyJZvEL_pjAuZjMUdsxEiAKS7iY86KM9D",
   "videos": [
-    { "id": "v=96UTK-rk4fw", "title": "CryptoMondays Fort Lauderdale - ETH Denver Style 2023" },
-    { "id": "v=ZxVozGO_x44", "title": "Global Pizza Party May 22, 2024 PizzaDAO" },
-    { "id": "v=96UTK-rk4fw", "title": "CryptoMondays Boston - Boston Blockchain Week 2025 - CryptoMondays Fort Lauderdale" }
+    {
+      "id": "ZxVozGO_x44",
+      "title": "CryptoMondays Event #1"
+    },
+    {
+      "id": "dH-V4fdA13I",
+      "title": "CryptoMondays Event #2"
+    },
+    {
+      "id": "96UTK-rk4fw",
+      "title": "CryptoMondays Event #3"
+    }
   ]
 }
+
