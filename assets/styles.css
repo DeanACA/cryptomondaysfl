@@ -22,7 +22,12 @@ a:hover{text-decoration:underline}
 .between{justify-content:space-between}
 
 .brand{display:flex;gap:12px;align-items:center;font-weight:600;color:var(--ink)}
-.brand .logo{height:36px}
+.brand .logo {
+  height: 90px;     /* Increase size — adjust between 80–100px as needed */
+  width: auto;
+  margin-right: 12px;
+  vertical-align: middle;
+}
 
 .nav a{margin-left:16px;color:var(--ink);opacity:0.9}
 .nav a:hover{opacity:1}
