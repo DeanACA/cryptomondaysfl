@@ -1,8 +1,8 @@
 {
-  "playlist": "https://youtube.com/playlist?list=PLyJZvEL_pjAuZjMUdsxEiAKS7iY86KM9D&si=KPlCG2utvQsJV3yg",
+  "playlist": "list=PLyJZvEL_pjAuZjMUdsxEiAKS7iY86KM9D&si=KPlCG2utvQsJV3yg",
   "videos": [
-    { "id": "https://youtu.be/ZxVozGO_x44", "title": "CryptoMondays Fort Lauderdale - ETH Denver Style" },
-    { "id": "VIDEO_ID_2", "title": "CryptoMondays FTL — Talk Title 2" },
-    { "id": "VIDEO_ID_3", "title": "CryptoMondays FTL — Talk Title 3" }
+    { "id": "v=96UTK-rk4fw", "title": "CryptoMondays Fort Lauderdale - ETH Denver Style 2023" },
+    { "id": "v=ZxVozGO_x44", "title": "Global Pizza Party May 22, 2024 PizzaDAO" },
+    { "id": "v=96UTK-rk4fw", "title": "CryptoMondays Boston - Boston Blockchain Week 2025 - CryptoMondays Fort Lauderdale" }
   ]
 }
