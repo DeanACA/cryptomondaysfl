@@ -1,0 +1,8 @@
+{
+  "playlist": "https://youtube.com/playlist?list=PLyJZvEL_pjAuZjMUdsxEiAKS7iY86KM9D&si=KPlCG2utvQsJV3yg",
+  "videos": [
+    { "id": "https://youtu.be/ZxVozGO_x44", "title": "CryptoMondays Fort Lauderdale - ETH Denver Style" },
+    { "id": "VIDEO_ID_2", "title": "CryptoMondays FTL — Talk Title 2" },
+    { "id": "VIDEO_ID_3", "title": "CryptoMondays FTL — Talk Title 3" }
+  ]
+}
