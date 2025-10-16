@@ -80,6 +80,13 @@ a:hover{text-decoration:underline}
 .tier.featured{outline:2px solid var(--brand)}
 .tier .price{margin-top:12px;font-weight:800}
 
+.tier .price{ display: none; } /* hide old price line if still present */
+.tier-points{
+  margin:10px 0 0 18px;
+  color: var(--ink);
+}
+.tier-points li{ margin:6px 0; }
+
 /* Contact footer */
 .contact-list{list-style:none;padding:0;margin:0}
 .contact-list li{margin:6px 0}
