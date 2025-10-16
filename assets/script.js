@@ -64,36 +64,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // ---- Homepage Carousel: past + current events
-  const carousel = document.querySelector("#events-carousel");
-  if (carousel) {
+function ytSlide(v) {
+  const title = v.title ? v.title.replace(/"/g, "&quot;") : "Video";
+  return `
+    <div class="slide yt-slide">
+      <div class="yt-frame">
+        <iframe
+          src="https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1"
+          title="${title}"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="meta">${title}</p>
+    </div>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // --- Existing Events carousel (keep as-is) ---
+
+  // --- YouTube carousel from assets/youtube.json ---
+  const yt = document.querySelector("#yt-carousel");
+  if (yt) {
     try {
-      const src = carousel.dataset.src || "assets/events.json";
-      const now = new Date();
-      const events = (await loadJSON(src)).sort((a, b) => new Date(b.start) - new Date(a.start)); // newest first
-      // Limit to last 8 including any today/future
-      const recent = events.slice(0, 8);
-      carousel.innerHTML = `
+      const src = yt.dataset.src || "assets/youtube.json";
+      const data = await loadJSON(src);
+      const vids = (data.videos || []).slice(0, 8); // cap to 8
+
+      yt.innerHTML = `
         <div class="slider" tabindex="0">
-          ${recent.map(eventSlide).join("")}
+          ${vids.map(ytSlide).join("")}
         </div>
         <div class="slider-controls">
           <button class="btn ghost prev" aria-label="Previous">‹</button>
           <button class="btn ghost next" aria-label="Next">›</button>
         </div>
       `;
-      const slider = carousel.querySelector(".slider");
-      const prev = carousel.querySelector(".prev");
-      const next = carousel.querySelector(".next");
-      const slideWidth = () => carousel.querySelector(".slide").offsetWidth + 16;
+
+      const slider = yt.querySelector(".slider");
+      const prev = yt.querySelector(".prev");
+      const next = yt.querySelector(".next");
+      const slideWidth = () => yt.querySelector(".slide").offsetWidth + 16;
 
       prev.addEventListener("click", () => slider.scrollBy({ left: -slideWidth(), behavior: "smooth" }));
-      next.addEventListener("click", () => slider.scrollBy({ left: slideWidth(), behavior: "smooth" }));
+      next.addEventListener("click", () => slider.scrollBy({ left:  slideWidth(), behavior: "smooth" }));
     } catch (e) {
       console.error(e);
-      carousel.innerHTML = "<p>Past events will appear here soon.</p>";
+      yt.innerHTML = "<p>Videos will appear here soon.</p>";
     }
   }
+});
 
   // ---- Events page: split into upcoming & past
   const listUpcoming = document.querySelector("#events-upcoming");
