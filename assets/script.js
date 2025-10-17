@@ -138,55 +138,88 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// --- Highlight current nav link automatically ---
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav a");
-  const current = window.location.pathname.split("/").pop(); // get filename (e.g. events.html or index.html)
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute("href");
-    if (
-      (current === "" && href.includes("index")) || // homepage root
-      current === href ||
-      (current === "" && href === "./") // when hosted at root without filename
-    ) {
-      link.classList.add("active");
+// --- NAV ACTIVE STATE (robust: works with static or JS-injected header) ---
+(function setupNavActive() {
+  const run = () => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return; // header not in DOM yet
+    const links = Array.from(nav.querySelectorAll('a'));
+    if (!links.length) return;
+
+    const setOnlyActive = (link) => {
+      links.forEach(l => l.classList.remove('active'));
+      if (link) link.classList.add('active');
+    };
+
+    const isHome = location.pathname.endsWith('/') ||
+                   location.pathname.endsWith('index.html') ||
+                   location.pathname === '';
+
+    if (!isHome) {
+      // On non-home pages: match by filename only (events.html, terms.html, etc.)
+      const current = location.pathname.split('/').pop();
+      const exact = links.find(a => (a.getAttribute('href') || '').split('#')[0] === current);
+      setOnlyActive(exact);
+      return;
     }
-  });
-});
 
-// --- Smooth scroll for in-page links (homepage) ---
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
-    a.addEventListener("click", (e) => {
-      const id = a.getAttribute("href").slice(1);
-      const el = document.getElementById(id);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        history.replaceState(null, "", `#${id}`);
-      }
+    // On home page: use hash + section observing
+    const hashLinks = links.filter(a => (a.getAttribute('href') || '').startsWith('index.html#') || (a.getAttribute('href') || '').startsWith('#'));
+
+    // Normalize href -> id for home
+    const hrefToId = (href) => {
+      if (!href) return null;
+      if (href.startsWith('index.html#')) return href.slice('index.html#'.length);
+      if (href.startsWith('#')) return href.slice(1);
+      return null;
+    };
+
+    const byId = new Map(hashLinks.map(a => [hrefToId(a.getAttribute('href')), a]).filter(([id]) => !!id));
+
+    const setActiveById = (id) => setOnlyActive(byId.get(id) || null);
+
+    // If page loads with a hash, set it immediately
+    if (location.hash) setActiveById(location.hash.slice(1));
+
+    // Smooth scroll for hash links (home only)
+    hashLinks.forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = hrefToId(a.getAttribute('href'));
+        const el = id && document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', `#${id}`);
+          setActiveById(id);
+        }
+      });
     });
-  });
-});
 
-// --- Active link on scroll (homepage sections) ---
-document.addEventListener("DOMContentLoaded", () => {
-  // Only run on homepage (where links are hashes)
-  const isHome = location.pathname.endsWith("/") || location.pathname.endsWith("index.html") || location.pathname === "";
-  if (!isHome) return;
+    // Observe sections to update active state while scrolling
+    const sections = Array.from(document.querySelectorAll('section[id]')).filter(s => byId.has(s.id));
+    if (!sections.length) return;
 
-  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
-  const byId = new Map(navLinks.map(link => [link.getAttribute("href").slice(1), link]));
+    const observer = new IntersectionObserver((entries) => {
+      // Take the entry closest to the viewport center
+      const visible = entries.filter(e => e.isIntersecting);
+      if (!visible.length) return;
+      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      setActiveById(visible[0].target.id);
+    }, { root: null, threshold: [0.25, 0.5, 0.75], rootMargin: '-35% 0px -35% 0px' });
 
-  const sections = Array.from(document.querySelectorAll("section[id]")).filter(s => byId.has(s.id));
-  if (!sections.length) return;
+    sections.forEach(sec => observer.observe(sec));
+  };
 
-  function setActive(id) {
-    navLinks.forEach(l => l.classList.remove("active"));
-    const link = byId.get(id);
-    if (link) link.classList.add("active");
+  // Run after DOM is ready…
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
   }
+  // …and also after header is injected (if using JS include)
+  document.addEventListener('header:loaded', run);
+})();
+
 
   // If page loads with a hash, set it immediately
   if (location.hash && byId.has(location.hash.slice(1))) {
