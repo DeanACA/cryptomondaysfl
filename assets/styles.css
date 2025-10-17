@@ -291,6 +291,26 @@ a:hover{text-decoration:underline}
   padding: 6px;
 }
 
+/* Footer spacing polish */
+.site-footer .container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.footer-heading { margin-bottom: 16px; }
+
+.venue-grid { margin-bottom: 28px; }
+
+.footer-bottom {
+  border-top: 1px solid #1f232b;
+  padding-top: 16px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
 
 /* YouTube carousel styles */
 .yt-slide .yt-frame{
