@@ -1,0 +1,29 @@
+/* -------------------------------------------------
+   humans.txt — because bots have robots.txt 🤖
+   -------------------------------------------------
+*/
+
+/* Project */
+Name: CryptoMondays Fort Lauderdale
+Website: https://cryptomondaysfl.com
+Email: cryptomondaysfl@gmail.com
+Location: Fort Lauderdale, Florida, USA
+
+/* Powered by */
+Parent Entity: BGBadger (DBA)
+Builders: Web3 creators, degens, investors, educators & the crypto-curious
+Stack: GitHub Pages, JSON, Open Graph, caffeine, and good vibes
+
+/* Credits */
+Design & Dev: BGBadger Studio 🦡
+Community Host: CryptoMondays Fort Lauderdale
+Logo & Identity: Dialicious creative collective
+Open Source: Love, code, and memes
+
+/* About */
+We meet IRL to talk crypto, learn, build, collab, and laugh.
+We believe in permissionless innovation, decentralized friends,
+and making the Web3 world a little more human.
+
+See you Monday ✨
+#CryptoMondaysFL #BGBadger #Web3
