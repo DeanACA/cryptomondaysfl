@@ -74,18 +74,45 @@ a:hover{text-decoration:underline}
 .skeleton.title{height:20px;width:70%;margin-bottom:10px}
 .skeleton.body{height:60px;width:100%}
 
-/* Pricing tiers */
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
-.tier{background:var(--card);border:1px solid #1f232b;border-radius:12px;padding:18px}
-.tier.featured{outline:2px solid var(--brand)}
-.tier .price{margin-top:12px;font-weight:800}
-
-.tier .price{ display: none; } /* hide old price line if still present */
-.tier-points{
-  margin:10px 0 0 18px;
-  color: var(--ink);
+/* Pricing tiers (sponsor levels) */
+.tiers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+  margin-top:12px;
+  margin-bottom:20px; /* ensures space above the buttons */
 }
-.tier-points li{ margin:6px 0; }
+.tier{
+  background:var(--card);
+  border:1px solid #1f232b;
+  border-radius:12px;
+  padding:18px;
+}
+.tier h3{
+  margin:0 0 8px;
+}
+.tier.featured{
+  outline:2px solid var(--brand);
+}
+
+/* Hide any old price lines */
+.tier .price{ display:none; }
+
+/* Bullet points inside tiers */
+.tier-points{
+  list-style:disc;
+  margin:8px 0 0 18px;
+  padding:0;
+  color:var(--ink);
+}
+.tier-points li{
+  margin:6px 0;
+  line-height:1.45;
+  word-break:break-word; /* prevents long items from crowding */
+}
+
+/* Extra spacing between tiers and the buttons row */
+#sponsor .cta-row{ margin-top:16px; }
 
 /* Contact footer */
 .contact-list{list-style:none;padding:0;margin:0}
