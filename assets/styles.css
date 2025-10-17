@@ -285,6 +285,12 @@ a:hover{text-decoration:underline}
   opacity: 1;
 }
 
+.venue-grid img {
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  padding: 6px;
+}
+
 
 /* YouTube carousel styles */
 .yt-slide .yt-frame{
